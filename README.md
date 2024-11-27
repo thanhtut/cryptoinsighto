@@ -27,4 +27,4 @@ Seperate decoupled components for data extraction, data loading, transforming an
 ## 4. Implemented logics 
 1. Highest Bid and Lowest Ask (refresh interval, every 5 mins)
 2. Max Spread 
-3. Mid price and forecasiting
+3. Mid price and forecasting
