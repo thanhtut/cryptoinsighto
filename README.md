@@ -1,9 +1,45 @@
 # Crypto Insighto 
 A simulated (aka toy) datapipeline for processing real-time order book feeds from coin base and generating insights from it.
 
-## 1. How to test or run 
+## How to test or run 
 This is written in python and orgnaized as a Poetry project. 
 The tests are written using pytest.
+
+Before anything do poetry install.
+
+Run generate data 
+```
+poetry run generate_mock
+```
+
+Run tests
+```
+poetry run pytest
+```
+## 1. Plan Data Feed and Product Selection
+
+Assumption 1: The assumption is that the data is coming from GET [product book](https://docs.cdp.coinbase.com/exchange/reference/exchangerestapi_getproductbook) with Level 2 request. According to the Coinbase's documentation 
+
+> Level 2: Full order book (aggregated) and auction info.
+
+Assumption 2: I am not familiar with coinbase API, but seems like level 2 data is necessary to compute max-spread. Example response is 
+```
+{
+  "bids": [
+    ["71234.56", "5.67", "3"],
+    ["71234.55", "2.34", "2"],
+    ["71234.54", "1.11", "1"]
+  ],
+  "asks": [
+    ["71235.57", "4.56", "2"],
+    ["71235.58", "3.45", "1"],
+    ["71235.59", "2.34", "1"]
+  ],
+  "sequence": 987654321
+}
+```
+I will wrap this response in the following pydnatic model. 
+Assumpton 3: price_level can be any non zero float and quantity has to be also non zero Decimal. The quantity in reality can have limits like Satoshi (unit) is the smallest unit of bitcoin. But simplied to any non zero Decimal for now. Number of orders is non-zero integer.
 
 ## 2. Error handling 
 ### 2.1 Error handling during ingest from the API
