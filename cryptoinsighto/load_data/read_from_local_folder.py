@@ -21,7 +21,7 @@ def read_from_local_folder(data_folder: Path):
 
             except ValidationError as e:
                 print(f"There is a validation error. Log and report. {file_path.name}: {str(e)}")
-
+    # data validation is done here to ensure that only valid records gets to the dataframe
     validated_df = pd.DataFrame(valid_records) if valid_records else pd.DataFrame()
-
+    validated_df = validated_df.sort_values("request_timestamp", ascending=True)
     return validated_df

@@ -14,6 +14,8 @@ class BookRecordStorage(BookRecord):
     # response time
     request_timestamp: datetime = Field(..., description="Time that the request was sent")
 
+    # TODO: probably need to add market symbol here too
+
     model_config = ConfigDict(
         use_tz=True  # timezone awareness
     )

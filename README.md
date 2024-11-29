@@ -7,6 +7,10 @@ The tests are written using pytest.
 
 Before anything do poetry install.
 
+Run insights
+```
+poetry run generate_insights
+```
 Run generate data 
 ```
 poetry run generate_mock
@@ -64,3 +68,37 @@ Seperate decoupled components for data extraction, data loading, transforming an
 1. Highest Bid and Lowest Ask (refresh interval, every 5 mins)
 2. Max Spread 
 3. Mid price and forecasting
+
+## 5. Example output
+```
+JSON decode error. Log and report. coinbase_mock_bookrecord_20241128_055742.json: Expecting value: line 1 column 1 (char 0)
+JSON decode error. Log and report. coinbase_mock_bookrecord_20241128_055919.json: Expecting value: line 4 column 7 (char 26)
+Running analysis: forecast_linear_regression
+Function forecast_linear_regression produced the result The future price is [71245.50210877192]
+Function forecast_linear_regression completed
+Running analysis: max_spread
+Function max_spread produced the result Max Spread - 110.549
+Function max_spread completed
+Running analysis: highest_bid_lowest_ask
+Function highest_bid_lowest_ask produced the result
+Highest bid is 71287.059 and lowset asks is 71176.51 at 2024-11-28 06:01:41.979567
+Highest bid is 71289.1482 and lowset asks is 71214.51 at 2024-11-28 06:01:46.984760
+Highest bid is 71304.0413 and lowset asks is 71173.38 at 2024-11-28 06:01:51.991999
+Highest bid is 71281.227 and lowset asks is 71173.16 at 2024-11-28 06:01:56.997453
+Highest bid is 71298.5588 and lowset asks is 71171.09 at 2024-11-28 06:02:02.000422
+Highest bid is 71295.9934 and lowset asks is 71163.78 at 2024-11-28 06:02:07.002566
+Highest bid is 71302.8094 and lowset asks is 71168.51 at 2024-11-28 06:02:11.198582
+Highest bid is 71303.4033 and lowset asks is 71182.84 at 2024-11-28 06:02:16.201464
+Highest bid is 71304.5802 and lowset asks is 71164.89 at 2024-11-28 06:02:21.205619
+Highest bid is 71302.3096 and lowset asks is 71173.44 at 2024-11-28 06:02:26.211397
+Highest bid is 71287.9051 and lowset asks is 71176.96 at 2024-11-28 06:02:31.214469
+Highest bid is 71296.166 and lowset asks is 71172.63 at 2024-11-28 06:02:36.216246
+Highest bid is 71304.1118 and lowset asks is 71167.66 at 2024-11-28 06:02:40.410855
+Highest bid is 71300.3602 and lowset asks is 71172.21 at 2024-11-28 06:02:45.413534
+Highest bid is 71302.0204 and lowset asks is 71171.47 at 2024-11-28 06:02:50.419523
+Highest bid is 71302.7034 and lowset asks is 71169.79 at 2024-11-28 06:02:55.422926
+Highest bid is 71304.8945 and lowset asks is 71209.34 at 2024-11-28 06:03:00.425648
+Highest bid is 71295.5421 and lowset asks is 71215.39 at 2024-11-28 06:03:05.431879
+Highest bid is 71303.0138 and lowset asks is 71193.77 at 2024-11-28 06:03:10.434156
+Function highest_bid_lowest_ask completed
+```

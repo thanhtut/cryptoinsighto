@@ -10,6 +10,7 @@ python = "^3.12"
 pydantic = "^2.10.2"
 pandas = "^2.2.3"
 pyarrow = "^18.1.0"
+scikit-learn = "^1.5.2"
 
 
 [tool.poetry.group.dev.dependencies]
@@ -23,3 +24,4 @@ build-backend = "poetry.core.masonry.api"
 
 [tool.poetry.scripts]
 generate_mock = "cryptoinsighto.coinbase_mock.run_mock_generate:main"
+generate_insights = "cryptoinsighto.insights.main:main"
