@@ -4,7 +4,7 @@ emphasizing fault tolerance, scalability, and storage.
 
 AWS or Azure 
 
-![Core Cloud Design](cloud_architecture.png "Core Cloud Architecture")
+![Core Cloud Design](./cloud_architecture.jpg "Core Cloud Architecture")
 
 TODO: Add cost comparison
 
