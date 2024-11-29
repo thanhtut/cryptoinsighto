@@ -4,6 +4,8 @@ emphasizing fault tolerance, scalability, and storage.
 
 AWS or Azure 
 
+![Core Cloud Design](cloud_architecture.png "Core Cloud Architecture")
+
 TODO: Add cost comparison
 
 # Deploying on our own private servers
