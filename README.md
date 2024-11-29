@@ -7,6 +7,8 @@ The tests are written using pytest.
 
 Before anything do poetry install.
 
+NOTE: the mock_data folder is also pushed for the sake of testing. It is not supposed to be in version control (I have added it to .gitignore) but it is a toy project thus for the conveniece of testing on your end I have force added it.
+
 Run insights
 ```
 poetry run generate_insights
