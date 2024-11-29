@@ -69,6 +69,8 @@ Seperate decoupled components for data generation, data loading and generating i
 
 A wrapper function for the analysis `cryptoinsighto.insights.analysis.run_analysis_wrapper` to wrap the actual analysis functions. Using single responsibility feature, this wrapper will do the logging and forwarding of the generated data for the analysis functions.
 
+I have used dataframes as the input for the analysis functions. This dataframs can be used by reading from PyArrow files for efficently loading a large tabular data.
+
 ## 4. Implemented logics 
 1. Highest Bid and Lowest Ask (refresh interval, every 5 mins)
 2. Max Spread 
