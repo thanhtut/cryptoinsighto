@@ -1,7 +1,7 @@
 # Crypto Insighto 
 A simulated (aka toy) datapipeline for processing real-time order book feeds from coin base and generating insights from it.
 
- [Part 2](./README2.md)
+ ## [Here is Part 2](./README2.md)
 
 
 ## How to test or run 
@@ -57,6 +57,10 @@ Ingesting API from a third-party source, CoinBase, requies graceful handling of 
 
 #### API outages
 Tenacity python pacakge will be used to handle third-paty API outages and performance degradatoin issues. The max number of retries will be set to 5 retries with exponential wait time between each retries. The ingestion component will run as a Docker container and when the number of retries has been reached the container will be stop and an alert system will be set up to send emails/slacks to the team in order to notify about the container crashes.
+
+#### Network level errors and dealing with cloud hosting outages
+A load balancer that forwards to a geograpicaly distributed data readers can deal with errors of cloud provider related outages. 
+Cloud provider related outages can further be addressed by using geographically distributed instances. (Assuming that there is no global outages of a particular cloud service provider.)  
 
 #### Data validation
 Data validation will be done using Pydantic. When reading an invalid data into a Pydantic object a validation error will be raised and it will be handled and logged. Validation errors should be forwarded to another component that will compile and send a report of validation errors after every 10 validation errors. Currently, failed validation errors are printed.
